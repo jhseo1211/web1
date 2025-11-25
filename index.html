@@ -1,46 +1,110 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-
+<html lang="ko">
 <head>
-  <title>For Nad+</title>
-  <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Notes - 물리학 공부 노트</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- MathJax for equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+<body>
+    <header>
+        <h1><a href="index.html">Physics Notes</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="mechanics/index.html">역학</a></li>
+                <li><a href="electromagnetism/index.html">전자기학</a></li>
+                <li><a href="thermodynamics/index.html">열역학</a></li>
+                <li><a href="quantum/index.html">양자역학</a></li>
+                <li><a href="relativity/index.html">상대성이론</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<h1>For Nad+ </h1>
-<h2><a href="index.html">(Nad+를 세포에 증가시킬려면 무엇을 먹어야 할까?)</a></h2>
-<ol>
-  <li><a href="1.html">NR(Nicotinamide riboside)</a></li>
-  <li><a href="2.html">NA(Niacin)</a></li>
-  <li><a href="3.html">NAM(Nicotinamide)</a></li>
-  <li><a href="4.html">NMN(nicotinamide mononucleotide)</a></li>
-</ol>
-<p>
-<strong> Nicotinamide riboside (<u>NR</u>)</strong> is a pyridine-nucleoside similar to vitamin B3, functioning as a precursor to nicotinamide adenine dinucleotide or NAD+.</p>
-<img src="Nicotinamide-beta-riboside.svg" width="25%">
-<p style="margin-top:40px">Synthesis<br>
-Different biosynthetic pathways are responsible for converting the different B3 vitamins into NAD+. The enzyme nicotinamide phosphoribosyltransferase (Nampt) catalyzes the rate-limiting step of the two-step pathway converting nicotinamide to NAD+.NR kinase enzymes can also function as a salvage pathway for NAD+, but this pathway is not essential.</p>
-<p>Supplementation<br>
-<a href="https://onlinelibrary.wiley.com/doi/10.1111/eci.13334" target="_blank" title="Implications of NAD+ boosters in translational medicine">Treatment of elderly (22-month old) mice with NR increased NAD+ thereby activating sirtuin 1 which reversed mitochondrial and muscular dysfunction. Increasing NAD+ with NR supplementation has been shown to prevent diet-induced obesity in mice.</a><br>
-A small non-randomized clinical study administering 250-1000 mg/day of NR for 9 days showed a maximal two-fold increase in NAD+.<br>
-NR kinase enzymes are essential for exogenous utilization of NR and NMN. Both NR and NMN are vulnerable to extracellular degradation by CD38 enzyme.</p>
+    <div class="container">
+        <main>
+            <h1>물리학 공부 노트</h1>
 
-<table>
+            <p>
+                물리학 공부 내용을 정리하고 공유하는 공간입니다.
+                각 분야별로 핵심 개념, 공식, 예제 문제들을 체계적으로 정리하고 있습니다.
+            </p>
 
-  <tr>
-      <td>Identifiers</td>
-  </tr>
-  <tr>
-      <td>CAS Number</td>
-      <td>1094-61-7</td>
-  </tr>
-  <tr>
-      <td>ECHA InfoCard</td>
-      <td>100.012.851</td>
-  </tr>
-</table>
-  </body>
+            <h2>분야별 목차</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3><a href="mechanics/index.html">역학 (Mechanics)</a></h3>
+                    <p>운동학, 동역학, 에너지와 일, 운동량, 회전운동 등 고전역학의 기초</p>
+                </div>
+
+                <div class="card">
+                    <h3><a href="electromagnetism/index.html">전자기학 (Electromagnetism)</a></h3>
+                    <p>정전기학, 전류와 자기장, 전자기 유도, 맥스웰 방정식</p>
+                </div>
+
+                <div class="card">
+                    <h3><a href="thermodynamics/index.html">열역학 (Thermodynamics)</a></h3>
+                    <p>열역학 법칙, 엔트로피, 열기관, 통계역학 기초</p>
+                </div>
+
+                <div class="card">
+                    <h3><a href="quantum/index.html">양자역학 (Quantum Mechanics)</a></h3>
+                    <p>파동함수, 슈뢰딩거 방정식, 양자 연산자, 수소 원자</p>
+                </div>
+
+                <div class="card">
+                    <h3><a href="relativity/index.html">상대성이론 (Relativity)</a></h3>
+                    <p>특수 상대성이론, 일반 상대성이론, 시공간과 중력</p>
+                </div>
+
+                <div class="card">
+                    <h3><a href="optics/index.html">광학 (Optics)</a></h3>
+                    <p>기하광학, 파동광학, 간섭과 회절</p>
+                </div>
+
+                <div class="card">
+                    <h3><a href="waves/index.html">파동 (Waves)</a></h3>
+                    <p>파동의 성질, 음파, 전자기파</p>
+                </div>
+            </div>
+
+            <h2>주요 공식 미리보기</h2>
+
+            <div class="formula">
+                <div class="formula-title">뉴턴의 제2법칙</div>
+                \[ \vec{F} = m\vec{a} \]
+            </div>
+
+            <div class="formula">
+                <div class="formula-title">에너지-질량 등가 원리</div>
+                \[ E = mc^2 \]
+            </div>
+
+            <div class="formula">
+                <div class="formula-title">슈뢰딩거 방정식</div>
+                \[ i\hbar\frac{\partial}{\partial t}\Psi = \hat{H}\Psi \]
+            </div>
+
+            <div class="formula">
+                <div class="formula-title">맥스웰 방정식 (미분형)</div>
+                \[ \nabla \cdot \vec{E} = \frac{\rho}{\epsilon_0} \]
+                \[ \nabla \cdot \vec{B} = 0 \]
+                \[ \nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial t} \]
+                \[ \nabla \times \vec{B} = \mu_0\vec{J} + \mu_0\epsilon_0\frac{\partial \vec{E}}{\partial t} \]
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>Physics Notes | 물리학 공부 노트</p>
+        <p>Last updated: 2025</p>
+    </footer>
+</body>
+</html>

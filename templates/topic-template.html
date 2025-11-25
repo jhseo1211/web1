@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+    =====================================================
+    새 주제 페이지 템플릿
+    =====================================================
+    사용법:
+    1. 이 파일을 복사하여 원하는 분야 폴더에 저장
+       예: mechanics/energy.html, quantum/spin.html
+    2. <title>과 <h1>을 주제에 맞게 수정
+    3. breadcrumb의 링크를 현재 위치에 맞게 수정
+    4. 사이드바의 목차를 해당 분야에 맞게 수정
+    5. 내용을 채워넣기
+    =====================================================
+    -->
+    <title>[주제명] - Physics Notes</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <h1><a href="../index.html">Physics Notes</a></h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../mechanics/index.html">역학</a></li>
+                <li><a href="../electromagnetism/index.html">전자기학</a></li>
+                <li><a href="../thermodynamics/index.html">열역학</a></li>
+                <li><a href="../quantum/index.html">양자역학</a></li>
+                <li><a href="../relativity/index.html">상대성이론</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <!-- Sidebar - 해당 분야의 목차 -->
+            <aside class="sidebar">
+                <h3>목차</h3>
+                <ul>
+                    <li><a href="index.html">개요</a></li>
+                    <li><a href="#">주제 1</a></li>
+                    <li><a href="#">주제 2</a></li>
+                    <li><a href="#">주제 3</a></li>
+                </ul>
+            </aside>
+
+            <main>
+                <!-- Breadcrumb 네비게이션 -->
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a> <span>›</span>
+                    <a href="index.html">[분야명]</a> <span>›</span>
+                    [주제명]
+                </div>
+
+                <h1>[주제명]</h1>
+
+                <!-- 개요 섹션 -->
+                <h2>개요</h2>
+                <p>
+                    이 주제에 대한 간단한 소개를 작성합니다.
+                </p>
+
+                <!-- 정의 박스 예시 -->
+                <div class="definition">
+                    <div class="definition-title">정의: [용어]</div>
+                    <p>용어의 정의를 작성합니다.</p>
+                </div>
+
+                <!-- 핵심 개념 섹션 -->
+                <h2>핵심 개념</h2>
+                <p>
+                    핵심 개념에 대한 설명을 작성합니다.
+                </p>
+
+                <!-- 공식 박스 예시 -->
+                <div class="formula">
+                    <div class="formula-title">[공식 이름]</div>
+                    \[ F = ma \]
+                    <p>여기서 \(F\)는 힘, \(m\)은 질량, \(a\)는 가속도입니다.</p>
+                </div>
+
+                <!-- 인라인 수식 예시 -->
+                <p>
+                    인라인 수식은 이렇게 사용합니다: \( E = mc^2 \)
+                </p>
+
+                <!-- 예제 박스 -->
+                <div class="example">
+                    <div class="example-title">예제 1</div>
+                    <p><strong>문제:</strong> 질량 2kg인 물체에 10N의 힘을 가했을 때 가속도는?</p>
+                    <p><strong>풀이:</strong></p>
+                    \[ a = \frac{F}{m} = \frac{10}{2} = 5 \, \text{m/s}^2 \]
+                </div>
+
+                <!-- 노트 박스 -->
+                <div class="note">
+                    <strong>참고:</strong> 중요한 부가 설명이나 주의사항을 작성합니다.
+                </div>
+
+                <!-- 표 예시 -->
+                <h2>관련 물리량</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>물리량</th>
+                            <th>기호</th>
+                            <th>단위</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>힘</td>
+                            <td>\(F\)</td>
+                            <td>N (뉴턴)</td>
+                        </tr>
+                        <tr>
+                            <td>질량</td>
+                            <td>\(m\)</td>
+                            <td>kg (킬로그램)</td>
+                        </tr>
+                        <tr>
+                            <td>가속도</td>
+                            <td>\(a\)</td>
+                            <td>m/s² (미터 매 초 제곱)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- 참고자료 -->
+                <h2>참고자료</h2>
+                <ul>
+                    <li>교재명, 저자, 출판사</li>
+                    <li><a href="#">관련 링크</a></li>
+                </ul>
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <p>Physics Notes | 물리학 공부 노트</p>
+        <p>Last updated: 2025</p>
+    </footer>
+</body>
+</html>

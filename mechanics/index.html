@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>역학 - Physics Notes</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <h1><a href="../index.html">Physics Notes</a></h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html" class="active">역학</a></li>
+                <li><a href="../electromagnetism/index.html">전자기학</a></li>
+                <li><a href="../thermodynamics/index.html">열역학</a></li>
+                <li><a href="../quantum/index.html">양자역학</a></li>
+                <li><a href="../relativity/index.html">상대성이론</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <aside class="sidebar">
+                <h3>역학 목차</h3>
+                <ul>
+                    <li><a href="index.html" class="active">개요</a></li>
+                    <li><a href="kinematics.html">운동학</a></li>
+                    <li><a href="dynamics.html">동역학</a></li>
+                    <li><a href="energy.html">에너지와 일</a></li>
+                </ul>
+            </aside>
+
+            <main>
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a> <span>›</span> 역학
+                </div>
+
+                <h1>역학 (Mechanics)</h1>
+
+                <h2>개요</h2>
+                <p>
+                    역학(Mechanics)은 물체의 운동과 그 원인이 되는 힘을 연구하는 물리학의 기초 분야입니다.
+                    뉴턴 역학(고전역학)을 중심으로 물체의 위치, 속도, 가속도, 힘의 관계를 다룹니다.
+                </p>
+
+                <h2>주요 주제</h2>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <h3><a href="kinematics.html">운동학 (Kinematics)</a></h3>
+                        <p>힘을 고려하지 않고 물체의 운동 자체를 기술. 변위, 속도, 가속도, 등가속도 운동, 포물선 운동</p>
+                    </div>
+
+                    <div class="card">
+                        <h3><a href="dynamics.html">동역학 (Dynamics)</a></h3>
+                        <p>힘과 운동의 관계. 뉴턴의 운동 법칙, 마찰력, 구심력, 관성계와 비관성계</p>
+                    </div>
+
+                    <div class="card">
+                        <h3><a href="energy.html">에너지와 일 (Energy & Work)</a></h3>
+                        <p>일과 에너지의 관계. 운동에너지, 위치에너지, 에너지 보존법칙, 일-에너지 정리</p>
+                    </div>
+                </div>
+
+                <h2>핵심 공식</h2>
+
+                <div class="formula">
+                    <div class="formula-title">뉴턴의 제2법칙</div>
+                    \[ \vec{F} = m\vec{a} = m\frac{d\vec{v}}{dt} = \frac{d\vec{p}}{dt} \]
+                </div>
+
+                <div class="formula">
+                    <div class="formula-title">등가속도 운동 공식</div>
+                    \[ v = v_0 + at \]
+                    \[ x = x_0 + v_0 t + \frac{1}{2}at^2 \]
+                    \[ v^2 = v_0^2 + 2a(x - x_0) \]
+                </div>
+
+                <div class="formula">
+                    <div class="formula-title">운동에너지와 일</div>
+                    \[ K = \frac{1}{2}mv^2 \]
+                    \[ W = \int \vec{F} \cdot d\vec{r} \]
+                    \[ W = \Delta K \]
+                </div>
+
+                <h2>관련 물리량</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>물리량</th>
+                            <th>기호</th>
+                            <th>SI 단위</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>변위</td>
+                            <td>\(\vec{r}, \vec{x}\)</td>
+                            <td>m</td>
+                            <td>위치 변화량</td>
+                        </tr>
+                        <tr>
+                            <td>속도</td>
+                            <td>\(\vec{v}\)</td>
+                            <td>m/s</td>
+                            <td>위치의 시간 변화율</td>
+                        </tr>
+                        <tr>
+                            <td>가속도</td>
+                            <td>\(\vec{a}\)</td>
+                            <td>m/s²</td>
+                            <td>속도의 시간 변화율</td>
+                        </tr>
+                        <tr>
+                            <td>힘</td>
+                            <td>\(\vec{F}\)</td>
+                            <td>N (kg·m/s²)</td>
+                            <td>운동 상태 변화의 원인</td>
+                        </tr>
+                        <tr>
+                            <td>질량</td>
+                            <td>\(m\)</td>
+                            <td>kg</td>
+                            <td>관성의 척도</td>
+                        </tr>
+                        <tr>
+                            <td>운동량</td>
+                            <td>\(\vec{p}\)</td>
+                            <td>kg·m/s</td>
+                            <td>\(\vec{p} = m\vec{v}\)</td>
+                        </tr>
+                        <tr>
+                            <td>에너지</td>
+                            <td>\(E, K, U\)</td>
+                            <td>J (kg·m²/s²)</td>
+                            <td>일을 할 수 있는 능력</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <p>Physics Notes | 물리학 공부 노트</p>
+        <p>Last updated: 2025</p>
+    </footer>
+</body>
+</html>

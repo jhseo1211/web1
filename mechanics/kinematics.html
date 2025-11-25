@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>운동학 - Physics Notes</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <h1><a href="../index.html">Physics Notes</a></h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html" class="active">역학</a></li>
+                <li><a href="../electromagnetism/index.html">전자기학</a></li>
+                <li><a href="../thermodynamics/index.html">열역학</a></li>
+                <li><a href="../quantum/index.html">양자역학</a></li>
+                <li><a href="../relativity/index.html">상대성이론</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <aside class="sidebar">
+                <h3>역학 목차</h3>
+                <ul>
+                    <li><a href="index.html">개요</a></li>
+                    <li><a href="kinematics.html" class="active">운동학</a></li>
+                    <li><a href="dynamics.html">동역학</a></li>
+                    <li><a href="energy.html">에너지와 일</a></li>
+                </ul>
+            </aside>
+
+            <main>
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a> <span>›</span>
+                    <a href="index.html">역학</a> <span>›</span>
+                    운동학
+                </div>
+
+                <h1>운동학 (Kinematics)</h1>
+
+                <h2>개요</h2>
+                <p>
+                    운동학(Kinematics)은 물체의 운동을 <strong>힘의 원인을 고려하지 않고</strong> 순수하게 기술하는 역학의 한 분야입니다.
+                    위치, 변위, 속도, 가속도 등의 물리량과 그들 사이의 관계를 다룹니다.
+                </p>
+
+                <div class="definition">
+                    <div class="definition-title">정의: 운동학</div>
+                    <p>
+                        물체의 운동을 시간, 위치, 속도, 가속도의 관점에서 기술하는 학문.
+                        "어떻게 움직이는가"를 다루며, "왜 움직이는가"는 동역학에서 다룬다.
+                    </p>
+                </div>
+
+                <h2>기본 물리량</h2>
+
+                <h3>위치와 변위</h3>
+                <p>
+                    <strong>위치(Position)</strong>는 기준점으로부터 물체까지의 거리와 방향을 나타내는 벡터입니다.
+                    <strong>변위(Displacement)</strong>는 위치의 변화량입니다.
+                </p>
+
+                <div class="formula">
+                    <div class="formula-title">변위</div>
+                    \[ \Delta \vec{r} = \vec{r}_f - \vec{r}_i \]
+                    <p>변위는 경로와 무관하게 시작점과 끝점만으로 결정되는 벡터량입니다.</p>
+                </div>
+
+                <h3>속도</h3>
+                <p>
+                    <strong>평균 속도(Average Velocity)</strong>는 변위를 걸린 시간으로 나눈 값이고,
+                    <strong>순간 속도(Instantaneous Velocity)</strong>는 극한에서의 속도입니다.
+                </p>
+
+                <div class="formula">
+                    <div class="formula-title">속도의 정의</div>
+                    \[ \vec{v}_{avg} = \frac{\Delta \vec{r}}{\Delta t} \]
+                    \[ \vec{v} = \lim_{\Delta t \to 0} \frac{\Delta \vec{r}}{\Delta t} = \frac{d\vec{r}}{dt} \]
+                </div>
+
+                <h3>가속도</h3>
+                <p>
+                    <strong>가속도(Acceleration)</strong>는 속도의 시간에 대한 변화율입니다.
+                </p>
+
+                <div class="formula">
+                    <div class="formula-title">가속도의 정의</div>
+                    \[ \vec{a}_{avg} = \frac{\Delta \vec{v}}{\Delta t} \]
+                    \[ \vec{a} = \frac{d\vec{v}}{dt} = \frac{d^2\vec{r}}{dt^2} \]
+                </div>
+
+                <h2>등가속도 운동</h2>
+                <p>
+                    가속도가 일정한 운동을 <strong>등가속도 운동(Uniformly Accelerated Motion)</strong>이라 합니다.
+                    이 경우 다음의 운동 방정식들이 성립합니다.
+                </p>
+
+                <div class="formula">
+                    <div class="formula-title">등가속도 운동 공식 (1차원)</div>
+                    \[ v = v_0 + at \]
+                    \[ x = x_0 + v_0 t + \frac{1}{2}at^2 \]
+                    \[ v^2 = v_0^2 + 2a(x - x_0) \]
+                    \[ x - x_0 = \frac{1}{2}(v_0 + v)t \]
+                    <p>여기서 \(v_0\)는 초기 속도, \(v\)는 나중 속도, \(a\)는 가속도, \(t\)는 시간입니다.</p>
+                </div>
+
+                <div class="note">
+                    <strong>주의:</strong> 등가속도 운동 공식은 가속도가 일정할 때만 적용할 수 있습니다.
+                    가속도가 변하는 경우 적분을 사용해야 합니다.
+                </div>
+
+                <h2>포물선 운동</h2>
+                <p>
+                    중력장에서 물체를 비스듬히 던졌을 때의 운동을 <strong>포물선 운동(Projectile Motion)</strong>이라 합니다.
+                    수평 방향과 수직 방향을 분리하여 분석합니다.
+                </p>
+
+                <div class="formula">
+                    <div class="formula-title">포물선 운동 (공기저항 무시)</div>
+                    <p><strong>수평 방향</strong> (가속도 = 0):</p>
+                    \[ x = v_0 \cos\theta \cdot t \]
+                    <p><strong>수직 방향</strong> (가속도 = -g):</p>
+                    \[ y = v_0 \sin\theta \cdot t - \frac{1}{2}gt^2 \]
+                    \[ v_y = v_0 \sin\theta - gt \]
+                </div>
+
+                <div class="example">
+                    <div class="example-title">예제: 포물선 운동</div>
+                    <p><strong>문제:</strong> 지면에서 초속 20m/s로 45° 각도로 공을 던졌다. 최고점 높이와 수평 도달 거리는? (g = 10 m/s²)</p>
+                    <p><strong>풀이:</strong></p>
+                    <p>초기 속도 성분:</p>
+                    \[ v_{0x} = 20 \cos 45° = 10\sqrt{2} \, \text{m/s} \]
+                    \[ v_{0y} = 20 \sin 45° = 10\sqrt{2} \, \text{m/s} \]
+                    <p>최고점에서 \(v_y = 0\)이므로:</p>
+                    \[ t_{max} = \frac{v_{0y}}{g} = \frac{10\sqrt{2}}{10} = \sqrt{2} \, \text{s} \]
+                    \[ h_{max} = \frac{v_{0y}^2}{2g} = \frac{200}{20} = 10 \, \text{m} \]
+                    <p>수평 도달 거리 (체공 시간 = \(2t_{max}\)):</p>
+                    \[ R = v_{0x} \cdot 2t_{max} = 10\sqrt{2} \cdot 2\sqrt{2} = 40 \, \text{m} \]
+                </div>
+
+                <h2>원운동</h2>
+                <p>
+                    물체가 원 궤도를 따라 운동할 때, 속력이 일정하더라도 방향이 변하므로 가속도가 존재합니다.
+                </p>
+
+                <div class="formula">
+                    <div class="formula-title">등속 원운동</div>
+                    \[ a_c = \frac{v^2}{r} = \omega^2 r \]
+                    \[ v = \omega r \]
+                    \[ T = \frac{2\pi}{\omega} = \frac{2\pi r}{v} \]
+                    <p>여기서 \(a_c\)는 구심 가속도, \(\omega\)는 각속도, \(T\)는 주기입니다.</p>
+                </div>
+
+                <h2>참고자료</h2>
+                <ul>
+                    <li>Halliday, Resnick, Walker - "Fundamentals of Physics"</li>
+                    <li>Serway, Jewett - "Physics for Scientists and Engineers"</li>
+                </ul>
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <p>Physics Notes | 물리학 공부 노트</p>
+        <p>Last updated: 2025</p>
+    </footer>
+</body>
+</html>
