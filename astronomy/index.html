@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>천문학 - Physics Notes</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div id="scroll-progress"></div>
+
+    <header>
+        <div class="header-content">
+            <h1>
+                <a href="../index.html">
+                    <span class="logo-icon">&#9883;</span>
+                    Physics Notes
+                </a>
+            </h1>
+            <div class="header-controls">
+                <button id="search-toggle" title="검색 (Ctrl+K)">&#128269;</button>
+                <button id="dark-mode-toggle" title="다크모드 전환">&#127769;</button>
+                <button id="menu-toggle" aria-label="메뉴">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../mechanics/index.html">역학</a></li>
+                <li><a href="../electromagnetism/index.html">전자기학</a></li>
+                <li><a href="../quantum/index.html">양자역학</a></li>
+                <li><a href="../particle-physics/index.html">입자물리</a></li>
+                <li><a href="index.html" class="active">천문학</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> <span>›</span> 천문학
+            </div>
+
+            <h1>천문학 (Astronomy)</h1>
+
+            <h2>개요</h2>
+            <p>
+                천문학은 지구 대기권 밖의 우주에 존재하는 천체와 우주 전체를 연구하는 자연과학입니다.
+                별, 행성, 은하, 우주의 기원과 진화를 다룹니다.
+            </p>
+
+            <div class="note">
+                이 섹션은 현재 작성 중입니다. 곧 내용이 추가될 예정입니다.
+            </div>
+
+            <h2>예정된 주제</h2>
+            <ul>
+                <li><strong>천체역학</strong> - 케플러 법칙, 궤도 역학</li>
+                <li><strong>항성물리학</strong> - 별의 구조, 진화, HR 다이어그램</li>
+                <li><strong>은하와 우주론</strong> - 은하 분류, 우주 팽창</li>
+                <li><strong>블랙홀과 중성자별</strong></li>
+                <li><strong>빅뱅 우주론</strong> - 우주 마이크로파 배경</li>
+                <li><strong>암흑물질과 암흑에너지</strong></li>
+            </ul>
+
+            <h2>핵심 공식 미리보기</h2>
+
+            <div class="formula">
+                <div class="formula-title">케플러 제3법칙</div>
+                \[ T^2 = \frac{4\pi^2}{GM}a^3 \]
+            </div>
+
+            <div class="formula">
+                <div class="formula-title">허블 법칙</div>
+                \[ v = H_0 d \]
+                <p>여기서 \(H_0 \approx 70 \, \text{km/s/Mpc}\)는 허블 상수입니다.</p>
+            </div>
+
+            <div class="formula">
+                <div class="formula-title">슈바르츠실트 반지름</div>
+                \[ r_s = \frac{2GM}{c^2} \]
+            </div>
+        </main>
+    </div>
+
+    <button id="back-to-top" title="맨 위로">&#8593;</button>
+
+    <div id="search-modal">
+        <div class="search-container">
+            <div class="search-header">
+                <h3>&#128269; 검색</h3>
+                <button id="search-close">&times;</button>
+            </div>
+            <input type="text" id="search-input" placeholder="검색어를 입력하세요..." autocomplete="off">
+            <div class="search-hint">Tip: Ctrl+K로 검색창을 열 수 있습니다</div>
+            <div id="search-results"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Physics Notes | 물리학 공부 노트</p>
+        <p>Last updated: 2025</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

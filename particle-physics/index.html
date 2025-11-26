@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입자물리학 - Physics Notes</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div id="scroll-progress"></div>
+
+    <header>
+        <div class="header-content">
+            <h1>
+                <a href="../index.html">
+                    <span class="logo-icon">&#9883;</span>
+                    Physics Notes
+                </a>
+            </h1>
+            <div class="header-controls">
+                <button id="search-toggle" title="검색 (Ctrl+K)">&#128269;</button>
+                <button id="dark-mode-toggle" title="다크모드 전환">&#127769;</button>
+                <button id="menu-toggle" aria-label="메뉴">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../mechanics/index.html">역학</a></li>
+                <li><a href="../electromagnetism/index.html">전자기학</a></li>
+                <li><a href="../quantum/index.html">양자역학</a></li>
+                <li><a href="index.html" class="active">입자물리</a></li>
+                <li><a href="../astronomy/index.html">천문학</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> <span>›</span> 입자물리학
+            </div>
+
+            <h1>입자물리학 (Particle Physics)</h1>
+
+            <h2>개요</h2>
+            <p>
+                입자물리학은 물질의 가장 기본적인 구성요소와 그들 사이의 상호작용을 연구하는 물리학의 한 분야입니다.
+                표준모형(Standard Model)을 통해 기본 입자와 힘을 설명합니다.
+            </p>
+
+            <div class="note">
+                이 섹션은 현재 작성 중입니다. 곧 내용이 추가될 예정입니다.
+            </div>
+
+            <h2>예정된 주제</h2>
+            <ul>
+                <li><strong>표준모형</strong> - 쿼크, 렙톤, 게이지 보손</li>
+                <li><strong>힉스 메커니즘</strong> - 질량의 기원</li>
+                <li><strong>강한 상호작용</strong> - QCD, 색전하</li>
+                <li><strong>약한 상호작용</strong> - W/Z 보손, 베타 붕괴</li>
+                <li><strong>입자 가속기와 검출기</strong></li>
+                <li><strong>표준모형을 넘어서</strong> - 암흑물질, 초대칭</li>
+            </ul>
+
+            <h2>핵심 공식 미리보기</h2>
+
+            <div class="formula">
+                <div class="formula-title">디랙 방정식</div>
+                \[ (i\gamma^\mu \partial_\mu - m)\psi = 0 \]
+            </div>
+
+            <div class="formula">
+                <div class="formula-title">파인만 전파인자 (스칼라)</div>
+                \[ \Delta_F(x-y) = \int \frac{d^4p}{(2\pi)^4} \frac{e^{-ip(x-y)}}{p^2 - m^2 + i\epsilon} \]
+            </div>
+        </main>
+    </div>
+
+    <button id="back-to-top" title="맨 위로">&#8593;</button>
+
+    <div id="search-modal">
+        <div class="search-container">
+            <div class="search-header">
+                <h3>&#128269; 검색</h3>
+                <button id="search-close">&times;</button>
+            </div>
+            <input type="text" id="search-input" placeholder="검색어를 입력하세요..." autocomplete="off">
+            <div class="search-hint">Tip: Ctrl+K로 검색창을 열 수 있습니다</div>
+            <div id="search-results"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Physics Notes | 물리학 공부 노트</p>
+        <p>Last updated: 2025</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

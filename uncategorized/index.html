@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미분류 - Physics Notes</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div id="scroll-progress"></div>
+
+    <header>
+        <div class="header-content">
+            <h1>
+                <a href="../index.html">
+                    <span class="logo-icon">&#9883;</span>
+                    Physics Notes
+                </a>
+            </h1>
+            <div class="header-controls">
+                <button id="search-toggle" title="검색 (Ctrl+K)">&#128269;</button>
+                <button id="dark-mode-toggle" title="다크모드 전환">&#127769;</button>
+                <button id="menu-toggle" aria-label="메뉴">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../mechanics/index.html">역학</a></li>
+                <li><a href="../electromagnetism/index.html">전자기학</a></li>
+                <li><a href="../quantum/index.html">양자역학</a></li>
+                <li><a href="../particle-physics/index.html">입자물리</a></li>
+                <li><a href="../astronomy/index.html">천문학</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> <span>›</span> 미분류
+            </div>
+
+            <h1>미분류 (Uncategorized)</h1>
+
+            <h2>개요</h2>
+            <p>
+                특정 분야에 속하지 않거나 여러 분야에 걸쳐 있는 주제들을 모아놓은 공간입니다.
+                수학적 방법론, 실험 기법, 물리학사 등이 포함될 수 있습니다.
+            </p>
+
+            <div class="note">
+                이 섹션은 현재 작성 중입니다. 곧 내용이 추가될 예정입니다.
+            </div>
+
+            <h2>예정된 주제</h2>
+            <ul>
+                <li><strong>수학적 물리학</strong> - 텐서, 미분기하, 군론</li>
+                <li><strong>수치해석</strong> - 시뮬레이션 방법</li>
+                <li><strong>실험 방법론</strong> - 오차 분석, 데이터 처리</li>
+                <li><strong>물리학사</strong> - 주요 발견과 인물</li>
+                <li><strong>단위와 차원</strong> - SI 단위계, 차원 분석</li>
+                <li><strong>물리 상수</strong> - 기본 상수 목록</li>
+            </ul>
+
+            <h2>물리 상수 참고</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>상수</th>
+                        <th>기호</th>
+                        <th>값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>광속</td>
+                        <td>\(c\)</td>
+                        <td>\(2.998 \times 10^8 \, \text{m/s}\)</td>
+                    </tr>
+                    <tr>
+                        <td>플랑크 상수</td>
+                        <td>\(h\)</td>
+                        <td>\(6.626 \times 10^{-34} \, \text{J·s}\)</td>
+                    </tr>
+                    <tr>
+                        <td>만유인력 상수</td>
+                        <td>\(G\)</td>
+                        <td>\(6.674 \times 10^{-11} \, \text{N·m}^2/\text{kg}^2\)</td>
+                    </tr>
+                    <tr>
+                        <td>볼츠만 상수</td>
+                        <td>\(k_B\)</td>
+                        <td>\(1.381 \times 10^{-23} \, \text{J/K}\)</td>
+                    </tr>
+                    <tr>
+                        <td>전자 질량</td>
+                        <td>\(m_e\)</td>
+                        <td>\(9.109 \times 10^{-31} \, \text{kg}\)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <button id="back-to-top" title="맨 위로">&#8593;</button>
+
+    <div id="search-modal">
+        <div class="search-container">
+            <div class="search-header">
+                <h3>&#128269; 검색</h3>
+                <button id="search-close">&times;</button>
+            </div>
+            <input type="text" id="search-input" placeholder="검색어를 입력하세요..." autocomplete="off">
+            <div class="search-hint">Tip: Ctrl+K로 검색창을 열 수 있습니다</div>
+            <div id="search-results"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Physics Notes | 물리학 공부 노트</p>
+        <p>Last updated: 2025</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
