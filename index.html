@@ -12,8 +12,27 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+    <!-- 스크롤 진행 표시바 -->
+    <div id="scroll-progress"></div>
+
     <header>
-        <h1><a href="index.html">Physics Notes</a></h1>
+        <div class="header-content">
+            <h1>
+                <a href="index.html">
+                    <span class="logo-icon">&#9883;</span>
+                    Physics Notes
+                </a>
+            </h1>
+            <div class="header-controls">
+                <button id="search-toggle" title="검색 (Ctrl+K)">&#128269;</button>
+                <button id="dark-mode-toggle" title="다크모드 전환">&#127769;</button>
+                <button id="menu-toggle" aria-label="메뉴">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
@@ -27,49 +46,56 @@
         </nav>
     </header>
 
+    <!-- 히어로 섹션 -->
+    <section class="hero">
+        <div class="hero-icon">&#9883;</div>
+        <h1>물리학 공부 노트</h1>
+        <p>물리학의 핵심 개념, 공식, 예제 문제들을 체계적으로 정리한 학습 자료입니다.</p>
+    </section>
+
     <div class="container">
         <main>
-            <h1>물리학 공부 노트</h1>
-
-            <p>
-                물리학 공부 내용을 정리하고 공유하는 공간입니다.
-                각 분야별로 핵심 개념, 공식, 예제 문제들을 체계적으로 정리하고 있습니다.
-            </p>
-
             <h2>분야별 목차</h2>
 
             <div class="card-grid">
                 <div class="card">
+                    <div class="card-icon">&#9881;</div>
                     <h3><a href="mechanics/index.html">역학 (Mechanics)</a></h3>
                     <p>운동학, 동역학, 에너지와 일, 운동량, 회전운동 등 고전역학의 기초</p>
                 </div>
 
                 <div class="card">
+                    <div class="card-icon">&#9889;</div>
                     <h3><a href="electromagnetism/index.html">전자기학 (Electromagnetism)</a></h3>
                     <p>정전기학, 전류와 자기장, 전자기 유도, 맥스웰 방정식</p>
                 </div>
 
                 <div class="card">
+                    <div class="card-icon">&#128293;</div>
                     <h3><a href="thermodynamics/index.html">열역학 (Thermodynamics)</a></h3>
                     <p>열역학 법칙, 엔트로피, 열기관, 통계역학 기초</p>
                 </div>
 
                 <div class="card">
+                    <div class="card-icon">&#9883;</div>
                     <h3><a href="quantum/index.html">양자역학 (Quantum Mechanics)</a></h3>
                     <p>파동함수, 슈뢰딩거 방정식, 양자 연산자, 수소 원자</p>
                 </div>
 
                 <div class="card">
+                    <div class="card-icon">&#127776;</div>
                     <h3><a href="relativity/index.html">상대성이론 (Relativity)</a></h3>
                     <p>특수 상대성이론, 일반 상대성이론, 시공간과 중력</p>
                 </div>
 
                 <div class="card">
+                    <div class="card-icon">&#128161;</div>
                     <h3><a href="optics/index.html">광학 (Optics)</a></h3>
                     <p>기하광학, 파동광학, 간섭과 회절</p>
                 </div>
 
                 <div class="card">
+                    <div class="card-icon">&#127754;</div>
                     <h3><a href="waves/index.html">파동 (Waves)</a></h3>
                     <p>파동의 성질, 음파, 전자기파</p>
                 </div>
@@ -102,9 +128,27 @@
         </main>
     </div>
 
+    <!-- 맨 위로 가기 버튼 -->
+    <button id="back-to-top" title="맨 위로">&#8593;</button>
+
+    <!-- 검색 모달 -->
+    <div id="search-modal">
+        <div class="search-container">
+            <div class="search-header">
+                <h3>&#128269; 검색</h3>
+                <button id="search-close">&times;</button>
+            </div>
+            <input type="text" id="search-input" placeholder="검색어를 입력하세요..." autocomplete="off">
+            <div class="search-hint">Tip: Ctrl+K로 검색창을 열 수 있습니다</div>
+            <div id="search-results"></div>
+        </div>
+    </div>
+
     <footer>
         <p>Physics Notes | 물리학 공부 노트</p>
         <p>Last updated: 2025</p>
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
