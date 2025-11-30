@@ -49,10 +49,11 @@
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../mechanics/index.html">역학</a></li>
-                <li><a href="../electromagnetism/index.html">전자기학</a></li>
-                <li><a href="../thermodynamics/index.html">열역학</a></li>
                 <li><a href="../quantum/index.html">양자역학</a></li>
-                <li><a href="../relativity/index.html">상대성이론</a></li>
+                <li><a href="../particle-physics/index.html">입자물리</a></li>
+                <li><a href="../astronomy/index.html">천문학</a></li>
+                <li><a href="../engineering/index.html">공학</a></li>
+                <li><a href="../recent/index.html">최근관심</a></li>
                 <li><a href="../about.html">About</a></li>
             </ul>
         </nav>
@@ -72,14 +73,13 @@
             </aside>
 
             <main>
-                <!-- Breadcrumb 네비게이션 -->
-                <div class="breadcrumb">
-                    <a href="../index.html">Home</a> <span>›</span>
-                    <a href="index.html">[분야명]</a> <span>›</span>
-                    [주제명]
-                </div>
+                <!-- Breadcrumb 네비게이션 (자동 생성) -->
+                <nav class="breadcrumb" id="breadcrumb"></nav>
 
                 <h1>[주제명]</h1>
+
+                <!-- 예상 읽기 시간 -->
+                <div class="reading-time" id="reading-time"></div>
 
                 <!-- 개요 섹션 -->
                 <h2>개요</h2>
@@ -124,6 +124,20 @@
                     <strong>참고:</strong> 중요한 부가 설명이나 주의사항을 작성합니다.
                 </div>
 
+                <!-- 인터랙티브 데모 예시 (선택사항) -->
+                <!--
+                <div class="interactive-demo">
+                    <h4>시뮬레이션: [데모 제목]</h4>
+                    <canvas id="demo-canvas" width="500" height="300"></canvas>
+                    <div class="demo-controls">
+                        <label>변수 1: <input type="range" id="var1" min="0" max="100" value="50"></label>
+                        <label>변수 2: <input type="range" id="var2" min="0" max="100" value="50"></label>
+                        <button onclick="resetDemo()">초기화</button>
+                        <button onclick="startDemo()">시작</button>
+                    </div>
+                </div>
+                -->
+
                 <!-- 표 예시 -->
                 <h2>관련 물리량</h2>
                 <table>
@@ -159,6 +173,28 @@
                     <li>교재명, 저자, 출판사</li>
                     <li><a href="#">관련 링크</a></li>
                 </ul>
+
+                <!-- 관련 문서 -->
+                <div class="related-docs">
+                    <h4>관련 문서</h4>
+                    <ul>
+                        <li><a href="#">관련 주제 1</a></li>
+                        <li><a href="#">관련 주제 2</a></li>
+                        <li><a href="#">관련 주제 3</a></li>
+                    </ul>
+                </div>
+
+                <!-- 이전/다음 페이지 네비게이션 -->
+                <nav class="page-nav">
+                    <a href="#" class="prev">
+                        <span class="nav-label">← 이전</span>
+                        <span class="nav-title">[이전 주제명]</span>
+                    </a>
+                    <a href="#" class="next">
+                        <span class="nav-label">다음 →</span>
+                        <span class="nav-title">[다음 주제명]</span>
+                    </a>
+                </nav>
             </main>
         </div>
     </div>

@@ -448,15 +448,6 @@ li {
 /* ==================== */
 /* Formula Box */
 /* ==================== */
-.formula {
-    background-color: var(--light-gray);
-    border-left: 4px solid var(--secondary-color);
-    padding: 1rem 1.5rem;
-    margin: 1.5rem 0;
-    border-radius: 0 8px 8px 0;
-    overflow-x: auto;
-}
-
 .formula-title {
     font-weight: 600;
     color: var(--primary-color);
@@ -568,19 +559,289 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Breadcrumb */
+/* ==================== */
+/* 브레드크럼 네비게이션 */
+/* ==================== */
 .breadcrumb {
     font-size: 0.9rem;
     margin-bottom: 1.5rem;
-    color: #666;
+    padding: 0.75rem 1rem;
+    background: var(--light-gray);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .breadcrumb a {
     color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.2s;
 }
 
-.breadcrumb span {
-    margin: 0 0.5rem;
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb .separator {
+    color: #999;
+    margin: 0 0.25rem;
+}
+
+.breadcrumb .current {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* ==================== */
+/* 이전/다음 페이지 네비게이션 */
+/* ==================== */
+.page-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 3rem 0 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.page-nav a {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    background: var(--light-gray);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+    max-width: 45%;
+}
+
+.page-nav a:hover {
+    background: var(--secondary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.page-nav a:hover .nav-label,
+.page-nav a:hover .nav-title {
+    color: white;
+}
+
+.page-nav .prev {
+    align-items: flex-start;
+}
+
+.page-nav .next {
+    align-items: flex-end;
+    margin-left: auto;
+}
+
+.page-nav .nav-label {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 0.25rem;
+}
+
+.page-nav .nav-title {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* ==================== */
+/* 공식 복사 버튼 */
+/* ==================== */
+.formula {
+    background-color: var(--light-gray);
+    border-left: 4px solid var(--secondary-color);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+    overflow-x: auto;
+    position: relative;
+}
+
+.formula-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.formula-copy {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    opacity: 0.8;
+}
+
+.formula-copy:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.formula-copy.copied {
+    background: #27ae60;
+}
+
+/* ==================== */
+/* 글씨 크기 조절 */
+/* ==================== */
+.font-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.font-controls button {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.font-controls button:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* 글씨 크기 클래스 */
+body.font-small { font-size: 14px; }
+body.font-normal { font-size: 16px; }
+body.font-large { font-size: 18px; }
+body.font-xlarge { font-size: 20px; }
+
+/* ==================== */
+/* 인터랙티브 데모 */
+/* ==================== */
+.interactive-demo {
+    background: var(--light-gray);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.interactive-demo h4 {
+    margin: 0 0 1rem 0;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.interactive-demo h4::before {
+    content: "▶";
+    color: var(--secondary-color);
+}
+
+.interactive-demo canvas {
+    display: block;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .interactive-demo canvas {
+    background: #1a1a2e;
+}
+
+.demo-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.demo-controls label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.demo-controls input[type="range"] {
+    width: 100px;
+}
+
+.demo-controls button {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.demo-controls button:hover {
+    background: var(--primary-color);
+}
+
+/* 예상 읽기 시간 */
+.reading-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--light-gray);
+    border-radius: 20px;
+}
+
+/* 관련 문서 */
+.related-docs {
+    background: var(--light-gray);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.related-docs h4 {
+    margin: 0 0 1rem 0;
+    color: var(--primary-color);
+}
+
+.related-docs ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.related-docs li a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.related-docs li a:hover {
+    background: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
 }
 
 /* ==================== */

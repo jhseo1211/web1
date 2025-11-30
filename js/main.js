@@ -9,6 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollProgress();
     initTableOfContents();
     initSearch();
+    initBreadcrumb();
+    initFontSize();
+    initFormulaCopy();
+    initReadingTime();
+    initKeyboardNav();
 });
 
 /**
@@ -239,4 +244,199 @@ function initSearch() {
             searchResults.appendChild(div);
         });
     });
+}
+
+/**
+ * 9. 브레드크럼 네비게이션
+ */
+function initBreadcrumb() {
+    const breadcrumb = document.getElementById('breadcrumb');
+    if (!breadcrumb) return;
+
+    const path = window.location.pathname;
+    const parts = path.split('/').filter(p => p && p !== 'index.html');
+
+    // 카테고리 이름 매핑
+    const categoryNames = {
+        'mechanics': '역학',
+        'electromagnetism': '전자기학',
+        'thermodynamics': '열역학',
+        'quantum': '양자역학',
+        'relativity': '상대성이론',
+        'optics': '광학',
+        'waves': '파동',
+        'particle-physics': '입자물리',
+        'astronomy': '천문학',
+        'engineering': '공학',
+        'recent': '최근관심',
+        'uncategorized': '미분류'
+    };
+
+    let html = '<a href="' + getBasePath() + 'index.html">Home</a>';
+    let currentPath = getBasePath();
+
+    parts.forEach(function(part, index) {
+        const isLast = index === parts.length - 1;
+        const name = categoryNames[part] || part.replace('.html', '').replace(/-/g, ' ');
+
+        html += '<span class="separator">›</span>';
+
+        if (isLast) {
+            html += '<span class="current">' + name + '</span>';
+        } else {
+            currentPath += part + '/';
+            html += '<a href="' + currentPath + 'index.html">' + name + '</a>';
+        }
+    });
+
+    breadcrumb.innerHTML = html;
+}
+
+/**
+ * 10. 글씨 크기 조절
+ */
+function initFontSize() {
+    const container = document.querySelector('.header-controls');
+    if (!container) return;
+
+    // 글씨 크기 버튼 추가
+    const fontControls = document.createElement('div');
+    fontControls.className = 'font-controls';
+    fontControls.innerHTML = '<button id="font-decrease" title="글씨 작게">A-</button><button id="font-increase" title="글씨 크게">A+</button>';
+
+    // 검색 버튼 앞에 삽입
+    const searchBtn = document.getElementById('search-toggle');
+    if (searchBtn) {
+        container.insertBefore(fontControls, searchBtn);
+    } else {
+        container.appendChild(fontControls);
+    }
+
+    const sizes = ['font-small', 'font-normal', 'font-large', 'font-xlarge'];
+    let currentSize = localStorage.getItem('fontSize') || 'font-normal';
+    document.body.classList.add(currentSize);
+
+    document.getElementById('font-decrease').addEventListener('click', function() {
+        const idx = sizes.indexOf(currentSize);
+        if (idx > 0) {
+            document.body.classList.remove(currentSize);
+            currentSize = sizes[idx - 1];
+            document.body.classList.add(currentSize);
+            localStorage.setItem('fontSize', currentSize);
+        }
+    });
+
+    document.getElementById('font-increase').addEventListener('click', function() {
+        const idx = sizes.indexOf(currentSize);
+        if (idx < sizes.length - 1) {
+            document.body.classList.remove(currentSize);
+            currentSize = sizes[idx + 1];
+            document.body.classList.add(currentSize);
+            localStorage.setItem('fontSize', currentSize);
+        }
+    });
+}
+
+/**
+ * 11. 공식 복사 버튼
+ */
+function initFormulaCopy() {
+    const formulas = document.querySelectorAll('.formula');
+
+    formulas.forEach(function(formula) {
+        // 이미 버튼이 있으면 스킵
+        if (formula.querySelector('.formula-copy')) return;
+
+        // 공식 내용 추출 (MathJax 텍스트)
+        const mathContent = formula.querySelector('.MathJax') || formula.querySelector('mjx-container');
+        const titleEl = formula.querySelector('.formula-title');
+
+        if (!mathContent && !formula.textContent.includes('\\[')) return;
+
+        // 복사 버튼 생성
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'formula-copy';
+        copyBtn.textContent = '복사';
+        copyBtn.title = 'LaTeX 코드 복사';
+
+        // LaTeX 소스 추출
+        let latexSource = '';
+        const scripts = formula.querySelectorAll('script[type="math/tex"], script[type="math/tex; mode=display"]');
+        if (scripts.length > 0) {
+            latexSource = scripts[0].textContent;
+        } else {
+            // \\[ \\] 사이의 내용 추출
+            const text = formula.innerHTML;
+            const match = text.match(/\\\[([\s\S]*?)\\\]/);
+            if (match) {
+                latexSource = match[1].trim();
+            }
+        }
+
+        copyBtn.addEventListener('click', function() {
+            navigator.clipboard.writeText(latexSource).then(function() {
+                copyBtn.textContent = '복사됨!';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    copyBtn.textContent = '복사';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            });
+        });
+
+        // 타이틀이 있으면 헤더로 감싸기
+        if (titleEl) {
+            const header = document.createElement('div');
+            header.className = 'formula-header';
+            titleEl.parentNode.insertBefore(header, titleEl);
+            header.appendChild(titleEl);
+            header.appendChild(copyBtn);
+        } else {
+            formula.insertBefore(copyBtn, formula.firstChild);
+        }
+    });
+}
+
+/**
+ * 12. 예상 읽기 시간
+ */
+function initReadingTime() {
+    const main = document.querySelector('main');
+    const readingTimeEl = document.getElementById('reading-time');
+
+    if (!main || !readingTimeEl) return;
+
+    const text = main.textContent || main.innerText;
+    const wordCount = text.trim().split(/\s+/).length;
+    const readingTime = Math.ceil(wordCount / 200); // 분당 200단어
+
+    readingTimeEl.innerHTML = '📖 약 ' + readingTime + '분 소요';
+}
+
+/**
+ * 13. 키보드 네비게이션
+ */
+function initKeyboardNav() {
+    const prevLink = document.querySelector('.page-nav .prev');
+    const nextLink = document.querySelector('.page-nav .next');
+
+    document.addEventListener('keydown', function(e) {
+        // 입력 중이면 무시
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+        if (e.key === 'ArrowLeft' && prevLink) {
+            window.location.href = prevLink.href;
+        } else if (e.key === 'ArrowRight' && nextLink) {
+            window.location.href = nextLink.href;
+        }
+    });
+}
+
+/**
+ * 헬퍼: 기본 경로 계산
+ */
+function getBasePath() {
+    const depth = (window.location.pathname.match(/\//g) || []).length - 1;
+    if (depth <= 1) return '';
+    return '../'.repeat(depth - 1);
 }
