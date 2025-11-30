@@ -181,7 +181,12 @@ function initSearch() {
         { title: '양자역학', url: 'quantum/index.html', keywords: '양자역학 quantum 슈뢰딩거 파동함수' },
         { title: '상대성이론', url: 'relativity/index.html', keywords: '상대성이론 relativity 아인슈타인 시공간' },
         { title: '광학', url: 'optics/index.html', keywords: '광학 optics 빛 굴절 반사' },
-        { title: '파동', url: 'waves/index.html', keywords: '파동 waves 주파수 파장' }
+        { title: '파동', url: 'waves/index.html', keywords: '파동 waves 주파수 파장' },
+        { title: '입자물리학', url: 'particle-physics/index.html', keywords: '입자물리 particle physics 표준모형 쿼크 렙톤 힉스 파인만' },
+        { title: '천문학', url: 'astronomy/index.html', keywords: '천문학 astronomy 케플러 항성 은하 블랙홀 우주론 허블' },
+        { title: '공학', url: 'engineering/index.html', keywords: '공학 engineering 회로 반도체 재료역학 유체역학 열전달' },
+        { title: '최근관심', url: 'recent/index.html', keywords: '최근관심 recent 양자컴퓨팅 중력파 카오스 복잡계' },
+        { title: '미분류', url: 'uncategorized/index.html', keywords: '미분류 uncategorized 수학 물리상수 단위 실험' }
     ];
 
     searchToggle.addEventListener('click', function() {
