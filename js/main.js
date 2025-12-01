@@ -178,9 +178,9 @@ function initSearch() {
     // 검색 데이터 (간단한 버전)
     const searchData = [
         { title: '역학 개요', url: 'mechanics/index.html', keywords: '역학 mechanics 뉴턴 힘 운동' },
-        { title: '운동학', url: 'mechanics/kinematics.html', keywords: '운동학 kinematics 속도 가속도 변위' },
-        { title: '동역학', url: 'mechanics/dynamics.html', keywords: '동역학 dynamics 뉴턴법칙 힘 마찰력' },
-        { title: '에너지와 일', url: 'mechanics/energy.html', keywords: '에너지 energy 일 work 운동에너지 위치에너지' },
+        { title: '운동학', url: 'mechanics/01-kinematics.html', keywords: '운동학 kinematics 속도 가속도 변위' },
+        { title: '동역학', url: 'mechanics/02-dynamics.html', keywords: '동역학 dynamics 뉴턴법칙 힘 마찰력' },
+        { title: '에너지와 일', url: 'mechanics/03-energy-work.html', keywords: '에너지 energy 일 work 운동에너지 위치에너지' },
         { title: '전자기학', url: 'electromagnetism/index.html', keywords: '전자기학 electromagnetism 맥스웰 전기장 자기장' },
         { title: '열역학', url: 'thermodynamics/index.html', keywords: '열역학 thermodynamics 엔트로피 열' },
         { title: '양자역학', url: 'quantum/index.html', keywords: '양자역학 quantum 슈뢰딩거 파동함수' },
